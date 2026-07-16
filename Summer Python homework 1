@@ -1,0 +1,303 @@
+# # x = 3
+# # typex = type(x)
+# # print(typex)
+# # # and allt works but this doesnt:
+# # x = 3
+# # typex = type(x)
+# # y = print(x)
+# # print(y)
+
+
+#problem - range between 0 and 100, based on what it is print a letter grade
+#between 90 and 100, print A, 80 to 89 B, 70 to 79 C, 60 and 69 is d and all else is f 
+
+# if(x<100 and x>0):
+#     if(x>=90):
+#         print("A")
+#     elif(x>=80):
+#         print("B")
+#     elif(x>=70):
+#         print("C")
+#     elif(x>=60):
+#         print("D")
+#     else:
+#         print("F")   
+# else:
+#     print ("no grade")
+
+
+
+
+
+# # if(x<10):
+# #     print("true")
+# # else:
+# #     print("false")
+
+
+# # if(y!=90):
+# #     print("true")
+# # else:
+# #     print("false")
+
+
+# # if(x>5 and x<6):
+# #     print("true")
+# # else:
+# #     print("false")
+
+# z=11
+
+# if(z>10 and z!=12):
+#     print("true")
+# else:
+#     print("false")
+
+
+# # if(f>0 and f<23):
+# #     print("true")
+# # else:
+# #     print("false")
+
+
+# # if(y>30 or x<19):
+# #     print("true")
+# # else:
+# #     print("false")
+
+# x = 3
+# if(x!=3 and x!=24):
+#     print("true")
+# else:
+#     print("false")
+
+# h=1
+
+# subtract = h-1
+
+# if(subtract!=29):
+#     print("true")
+# else:
+#     print("false")
+
+# g=6
+# if(g>=3.4 and g<=5.1):
+#     print("false")
+# else:
+#     print("true")
+
+# y=1/4
+# yy=8*y
+# x=16
+
+# if(x<=yy or x==0):
+#     print("true")
+# else:
+#     print("false")
+
+# if(x>7 and x<10.3 and x!=8.5):
+#     print("true")
+# else:
+#     print("false")
+
+# y=40
+# y=1
+# x=4
+# z=4
+# if(y>39 or y<2) and (x<=6) and (z==4):
+#     print("true")
+# else:
+#     print("false")
+
+# f=5
+# g=7
+# if(f>g) or (f>4 and f<6):
+#     print("true")
+# else:
+#     print("false")
+
+# x=3
+# y=8
+# z=7
+# subtract=y-2
+# if(x==subtract) and (y<4 or y!=0) and (z>x):
+#     print("true")
+# else:
+#     print("false")
+
+
+# # number of apples
+# apples = 2
+# print("Nia has", apples, "apples.")
+# # hungry or not true/false
+# hungry = False
+
+# if(type(apples)==int):
+#     if(apples<3) and (hungry == True):
+#         apples = apples - 1
+#         print("Ate 1. Number of apples remaining:", apples)
+#     elif(apples>12):
+#         apples=apples//2
+#         print("Gave half to Rika. Number of apples remaining:", apples)
+#     elif(apples==5):
+#         apples = apples - 3
+#         print("Fed 2 to squirrel and ate 1. Number of apples remaining:", apples)
+#     else:
+#         print("Kept all the apples. Number of apples remaining:", apples)
+# else:
+#     print("Nia can only have a whole number of apples.")
+
+
+# water = 50
+
+# if(water>0 and water<=50):
+#     if(water<=15):
+#         print("You have a small sprout!")
+#     elif(water>=16 and water<=20):
+#         print("You have a large sprout!")
+#     elif(water>=21 and water<=35):
+#         print("You have a dark blue flower!")
+#     elif(water>=36 and water<=39):
+#         print("You have a teal flower!")
+#     else:
+#         print("You have a dark blue flower and a teal flower!")
+# else:
+#     print("You killed it.")
+
+
+# n=6
+
+# for i in range(0,n):
+#     if(i%2==0):
+#         print("i=",i, "even")
+# #     else:
+# #         print("i=",i, "odd")
+
+
+# # x=0
+# # y=0
+
+# # while(x+y<10):
+# #     x+=2
+# #     y+=0.5
+# #     print("x=", x)
+# #     print("y=", y)
+# #     print("x+y=", x+y)
+
+# # #nested for loop
+# # n=3
+# # for i in range(0,n):
+# #     m=4
+# #     for j in range(0,m):
+# #         print("*", end="")
+# #     print("")
+
+# # rows=3
+# # rows_minus_1=rows-1
+# # for i in range(0,1):
+# #     columns=3
+# #     columns_minus_1 = columns-1
+# #     for j in range(0):
+# #         print("*", end="")
+# #     print("")
+# # for i in range(1,rows_minus_1):
+# #     columns=3
+# #     columns_minus_1 = columns-1
+# #     for j in range(1,columns_minus_1):
+# #         print("*", "number of spaces",end="")
+# #     print("")
+# # for i in range(rows):   
+# #     columns=3
+# #     columns_minus_1 = columns-1
+# #     for j in range(columns_minus_1,columns):
+# #         print("*", end="")
+# #     print("")
+
+
+# height=9
+# width=5
+# for i in range(0,height):
+#     for j in range(0, width):
+#         if (i==0 or i==height-1 or j==0 or j==width-1):
+#             print("*", end="")
+#         else:
+#             print(" ", end="")
+#     print("")
+
+# height=6
+# base=height+1
+# for i in range(0,height):
+#     for j in range(0, base):
+#         if (j==0):
+#             print("|", end="")
+#         elif(j==i+1):
+#             print("\ ", end="")
+#         else:
+#             print(" ", end="")
+#     print("")
+# for i in range(base):
+#     print("*",end="")
+# print ("")    
+
+# n=3
+# for i in range (0,n):
+#     for j in range(0,i+2):
+
+# height = 6
+# for k in range (0,height):
+#     print ("x"*k)
+    
+
+
+
+height=6
+base=height+(height-2)
+for j in range (base):
+    print("-", end="")
+print("")  
+for i in range(2,height):
+    count = height - 2*i + 1
+    print (" "*i, end="")
+    print ("\\\\" + "x"*count + "//") 
+print (" "*(height-3), "\/")
+
+
+# height=7
+
+# crust=height + (height-2)
+# # crust
+# print (" ",end="")
+# for j in range (crust):
+#     print("-", end="")
+# print("")  
+# #main body of pizza
+# for i in range (0,1):
+#     for j in range (0,height):
+#         print ("x"*j, end="") 
+#         print("\\\\")
+#         for k in range (0,height, 2):
+#             count = height-k
+#             print ("x"*count, end="")
+#         print ("")
+
+#Ok I need help bro I can't make it work 
+
+#             "\\\\" + "x"*count + "//") 
+# print (" "*(height-3),"\/")
+
+
+
+
+
+
+
+# height=3
+# base=3
+# for i in range (0,height):
+#     for j in range (0,base):
+#         if (i==0 or i==height-1 or j==0 or j==base-1):
+#             print("*", end="")
+#         else: 
+#             print (" ", end="")
+#     print ("")
+    
