@@ -1,0 +1,133 @@
+# if(x<100 and x>0):
+#     if(x>=90):
+#         print("A")
+#     elif(x>=80):
+#         print("B")
+#     elif(x>=70):
+#         print("C")
+#     elif(x>=60):
+#         print("D")
+#     else:
+#         print("F")   
+# else:
+#     print ("no grade")
+
+
+# def grading(grade):
+#     if(grade>100 and grade<0):
+#         return "no grade"
+#     if(grade>=90):
+#         return "A"
+#     if(grade>=80):
+#         return "B"
+#     if (grade>=70):
+#         return "C"
+#     if (grade>=60):
+#         return "D"
+#     else:
+#         return "F"
+
+# # it automatically terminates after return 
+
+# grade = 70
+# grade = grading(grade)
+# print(grade)
+
+# create a function that returns true if variable is divisible by 5 or divisible by 2
+
+# def divisible(number):
+#     return (number%5==0 or number%2==0)
+
+# #     #will automatically be true or false boolean return if it meets/doesn't meet the conditions
+
+# number = 50
+# number = divisible(number)
+# #overriding the original value of the number and making it a boolean operator?
+# print(number)
+
+# we are changing the type from int to boolean but it's kind of okay because it's python
+# doesn't return a number value anymore though
+
+# two arguments, one a string and one a number, print the string for however many times the number is
+
+# def printer(text,repeat):
+#     for i in range (0,repeat):
+#         print (text)
+
+# text = "Hello"
+# repeat = 4
+# printer(text,repeat)
+
+#printing is within function, don't need to add another print
+
+
+
+
+
+## Homework 3
+
+##1
+
+# def divisible(number):
+#     return (number%3==0 or number%7==0)
+
+# number = 80
+# number = divisible(number)
+# print(number)
+
+##2
+# def modifier(num, modify):
+#     return(num*modify)
+
+# num = 8
+# modify = 4
+# newnum = modifier(num, modify)
+
+# if (newnum>num):
+#     print ("Modified number is greater")
+# else:
+#     print ("New number is not greater")
+
+## 3
+# def divisible(num1, num2):
+#     return (num1%num2==0 or num2%num1==0)
+
+# num1=5 
+# num2=4
+# bool = divisible(num1, num2)
+# print(bool)
+
+# 4 
+def exclamation(text, excl):
+    print(text+"!"*excl)
+    return
+
+text = "yippee"
+excl = 7
+string = exclamation(text, excl)
+print (string)
+
+# #5
+# def compare3(num1,num2,num3):
+#     if(num1>num2 and num1>num3):
+#         return (num1)
+#     if(num2>num1 and num2>num3):
+#         return (num2)
+#     if(num3>num2 and num3>num1):
+#         return (num3)
+
+# num1 = 3
+# num2 = 4
+# num3 = 6
+# biggestnumber = compare3(num1,num2,num3)
+# print (biggestnumber)
+# # it doesn't give a value if two of the numbers are tied for greatest though
+
+#6
+def exclamation2(text, excl, lines):
+    for i in range(0, lines):
+        exclamation(text, excl)
+    return 
+lines = 7
+exclamation2 = exclamation2(text, excl, lines)
+print(exclamation2)
