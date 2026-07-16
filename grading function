@@ -123,11 +123,28 @@ print (string)
 # print (biggestnumber)
 # # it doesn't give a value if two of the numbers are tied for greatest though
 
-#6
-def exclamation2(text, excl, lines):
-    for i in range(0, lines):
-        exclamation(text, excl)
-    return 
-lines = 7
-exclamation2 = exclamation2(text, excl, lines)
-print(exclamation2)
+# #6
+# def exclamation2(text, excl, lines):
+#     for i in range(0, lines):
+#         exclamation(text, excl)
+#     return 
+# lines = 7
+# exclamation2 = exclamation2(text, excl, lines)
+# print(exclamation2)
+
+#why is it saying none?
+
+
+
+#Pizza
+
+height=6
+base=height+(height-2)
+for j in range (base):
+    print("-", end="")
+print("")  
+for i in range(2,height):
+    count = height - 2*i + 1
+    print (" "*i, end="")
+    print ("\\\\" + "x"*count + "//") 
+print (" "*(height-3), "\/")
