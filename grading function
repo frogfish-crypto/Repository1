@@ -289,8 +289,9 @@ pizzapizza(lines, crust)
 
 
 #xo pattern
-#xooooxoooo
-#xoooxoooxo
+
+#xooooxoooo 1 and 5
+#xoooxoooxo 1 and 4 and 9
 #xooxooxoox
 #xoxoxoxoxo
 
@@ -298,16 +299,21 @@ pizzapizza(lines, crust)
 
 lines=4
 length=lines*2+2
-count = 0
 for i in range (0,lines):
+    count=0
     for j in range(0, length):  
-        if count<=10:
+        if count==0:
             print("x", end="")
             count+=1
-            print (count)
-            print("o"*(lines-i), end="")
-            count+=(lines-i)
-            print(count)
+        elif count==5 and i==0:
+            print("x", end="")
+            count+=1
+        elif count==4 or count==9 while i==1:
+            print("x", end="")
+            count+=1
+        else:    
+            print("o", end="")
+            count+=1
     print("")
 
 #I'm stuck, how do i get it to break in the middle of printing
