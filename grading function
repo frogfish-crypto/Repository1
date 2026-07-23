@@ -134,19 +134,19 @@
 
 
 
-## Pizza
+# Pizza
 
-# height=1
-# base=height+(height-2)
+height=6
+base=height+(height-2)
 
-# for j in range (base):
-#     print("_", end="")
-# print("")  
-# for i in range(0,height-2):
-#     count = (2*(height-2))-2*i-2
-#     print (" "*i, end="")
-#     print ("\\\\" + "x"*count + "//") 
-# print (" "*(height-3), "\\/")
+for j in range (base):
+    print("_", end="")
+print("")  
+for i in range(0,height-2):
+    count = (2*(height-2))-2*i-2
+    print (" "*i, end="")
+    print ("\\\\" + "x"*count + "//") 
+print (" "*(height-3), "\\/")
 
 # # 0 8
 # # 1 6
@@ -155,33 +155,33 @@
 # # 4 0
 
 
-lines = 12
-for i in range (0,(lines//2)):
-    print(" "*i, end="")
-    print ("\\\\", end="")
-    print(" "*((lines-2)-2*i), end="")
-    print("//")
-for i in range (0, (lines//2)):
-    print(" "*((lines//2)-i-1), end="")
-    print ("//", end="")
-    print(" "*2*i, end="")
-    print("\\\\")
+# lines = 12
+# for i in range (0,(lines//2)):
+#     print(" "*i, end="")
+#     print ("\\\\", end="")
+#     print(" "*((lines-2)-2*i), end="")
+#     print("//")
+# for i in range (0, (lines//2)):
+#     print(" "*((lines//2)-i-1), end="")
+#     print ("//", end="")
+#     print(" "*2*i, end="")
+#     print("\\\\")
 
 
-def X(lines):
-    for i in range (0,(lines//2)):
-        print(" "*i, end="")
-        print ("\\\\", end="")
-        print(" "*((lines-2)-2*i), end="")
-        print("//")
-    for i in range (0, (lines//2)):
-        print(" "*((lines//2)-i-1), end="")
-        print ("//", end="")
-        print(" "*2*i, end="")
-        print("\\\\")
+# def X(lines):
+#     for i in range (0,(lines//2)):
+#         print(" "*i, end="")
+#         print ("\\\\", end="")
+#         print(" "*((lines-2)-2*i), end="")
+#         print("//")
+#     for i in range (0, (lines//2)):
+#         print(" "*((lines//2)-i-1), end="")
+#         print ("//", end="")
+#         print(" "*2*i, end="")
+#         print("\\\\")
 
-lines = 12
-X(lines)
+# lines = 12
+# X(lines)
 
 
 
@@ -198,3 +198,125 @@ X(lines)
 #   //      \\
 #  //        \\
 # //          \\
+
+#teaching Eli how to use python sigh
+#print("6-7 ella")
+
+# print ("Health:")
+# health = int(input())
+# kick=3
+# attack = True 
+
+# while health>kick+1:
+#     for i in range(0,100):
+#         if(attack==True and health>=kick):
+#             health-=kick
+#             print(health, "health remaining")
+#         elif (health<=kick):
+#             health=0
+#             print ("You died instantly!")
+#         else:
+#             print("They missed!")
+# print ("You died!")
+        
+
+
+# height=9
+# width=5
+# for i in range(0,height):
+#     for j in range(0, width):
+#         if (i==0 or i==height-1 or j==0 or j==width-1):
+#             print("*", end="")
+#         else:
+#             print(" ", end="")
+#     print("")
+
+
+
+
+#function version of printing the box
+def boxprinter(height, width):
+    print ("*"*width)
+    for i in range (0, height-2):
+        print ("*" + " "*(width-2) + "*")
+    if (height>1):
+        print ("*"*width)
+    else:
+        return 
+
+height=2
+width=2
+boxprinter(height, width)    
+
+
+# the function version of printing the right triangle 
+def triangleprinter(height):
+    for i in range (0,height):
+        print("|" + " "*i + "\\")
+    print("*"*(height+1))  
+
+height=3
+triangleprinter(height)
+
+
+height=12
+base=height+(height-2)
+
+for j in range (base):
+    print("_", end="")
+print("")  
+for i in range(0,height-2):
+    count = (2*(height-2))-2*i-2
+    print (" "*i, end="")
+    print ("\\\\" + "x"*count + "//") 
+print (" "*(height-3), "\\/")
+
+
+#the function version of printing the pizza slice
+def pizzapizza (lines,crust):
+    for j in range(0, crust):
+        print("_", end="")
+    print("")
+    for i in range (0,lines-2):
+        count = (2*(height-2)-2*i-2)
+        print(" "*i, end="")
+        print("\\\\" + "x"*count + "//")
+    print(" "*(height-3), "\\/")
+
+lines=12
+crust=height+(height-2)
+pizzapizza(lines, crust)
+
+
+#xo pattern
+#xooooxoooo
+#xoooxoooxo
+#xooxooxoox
+#xoxoxoxoxo
+
+# 1 is 4, 2 is 3, 3 is 2, 4 is 1
+
+lines=4
+length=lines*2+2
+count = 0
+for i in range (0,lines):
+    for j in range(0, length):  
+        if count<=10:
+            print("x", end="")
+            count+=1
+            print (count)
+            print("o"*(lines-i), end="")
+            count+=(lines-i)
+            print(count)
+    print("")
+
+#I'm stuck, how do i get it to break in the middle of printing
+
+lines=2
+for i in range (0,lines):
+    for j in range (0,10):
+        print("x", end="")
+        print("o"*(lines-i), end="")
+    print("")
+print("")
+
