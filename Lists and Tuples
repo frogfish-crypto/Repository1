@@ -1,0 +1,328 @@
+# #lists
+# list1=[1,2,3,4,5]
+
+# for x in list1:
+#     print(x)
+
+# tuple1=(1,2,3,4,5)
+
+# for x in tuple1:
+#     print(x)
+
+# #function which loops through a list and finds the greatest value
+
+
+
+# # def greatestvalue(list2):
+# #     greatest=list2[0]
+# #     for i in range(0,len(list2)):
+# #         if list2[i] >=greatest:
+# #             greatest=list2[i]
+# #     return greatest
+
+# # list2=[2, 8, 1, 5]
+
+# # greatestvalue=greatestvalue(list2)
+# # print(greatestvalue) 
+
+# # #now greatest and least
+
+# # def greatestandleast(list):
+# #     greatest=list[0]
+# #     least=list[0]
+# #     for i in range(0,len(list)):
+# #         if list[i] >=greatest:
+# #             greatest=list[i]
+# #         elif list[i]<= least:
+# #             least=list[i]
+# #     return greatest, least
+
+# # something=[2, 8, 1, 5]
+# # greatestleast=greatestandleast(something)
+# # print (greatestleast)
+# # #can apply same function to a differt list and it will still work w/o renaming
+
+# # bingo=[6, 17, 8, 2229]
+# # greatestleast=greatestandleast(bingo)
+# # print(greatestleast)
+
+# def greatestandleast(list):
+#     greatest=list[0]
+#     least=list[0]
+#     for x in list:
+#         if x >=greatest:
+#             greatest=x
+#         elif x<= least:
+#             least=x
+#     return greatest, least
+
+# something=[2, 8, 1, 5]
+# greatestleast=greatestandleast(something)
+# print (greatestleast)
+
+# #Objects
+# # python is an object-oritented program 
+# #when you create a variable you're creating a name that points to an object in your computer memory x=4 stores 4 as a value in your memory and allows x to refer to iy
+# #when i create a function you're passing it into the function 
+# #everything is pas by refernce so it refers directly to the memory address 
+# #some data types pass by value - refers to the value store 
+# #paramteter vs argument- there is a parameter in the function and you can run that function with any named argument in place of the parametr 
+# #creating variable x assigns it to a memory location, creatig y then assigning it to x creates a sperate memory location with same value as x and if you modify x the value of y will not change - this is passing by value
+# #meanwhile passing through refernce, they both get assigned to the same memory location- creatig y then assigning it to x assigns it to the same memory location as x, y willb set to the same block that x used to be set to
+# #lists are mutable- if twwo lists are passing by referce on the same memory block, it will appednd/edit/whatever the list of both - this is what happens when you pass something that's mutabke through a function
+# #lists in functions - the parameter gets made into the same list as the argument- adding and removing stuff off the list using functions  
+# #4 and 5 in hw are based on this btw 
+# #don't have to return anything bc if you change something about it inside it'll reflect on the parameter
+
+
+
+
+# Note: For problems 4 and 5, when appending something to or otherwise altering a list within a function, the original list outside of the function will be altered and you do not need to return the list. I will further elaborate on this next lesson.
+# If you need any help, please feel free to email me.
+
+# 1. Write a function called fullSum with one argument that returns the sum of all items in a list or a tuple.
+
+# def fullSum(list):
+#     sum=0
+#     for i in range(0,len(list)):
+#         sum+=list[i]
+#     return sum
+
+# list=[9,1,10,5,5,11,8,2,9,7]
+# print(fullSum(list))
+
+# 2. Write a function called indexOf with two arguments (list and item) that returns the index of the given item. If the item cannot be found, return -1.
+
+# def indexOf(list,item):
+#     index=-1
+#     for i in range (0, len(list)):
+#         if item==list[i]:
+#             index=i
+#     return index
+
+# def indexOf(list,item):
+#     for i in range (0, len(list)):
+#         if item==list[i]:
+#             return i
+#     return -1
+
+# list=[1,2,3]
+# item=1
+# print(indexOf(list,item))
+
+
+# 3. Write a function called oddEvenSum with one argument that returns both the sum of the values at odd indices and the sum of the values at even indices.
+
+# def oddEvenSum(list):
+#     oddSum=0
+#     evenSum=0
+#     for i in range (0,len(list)):
+#         if i%2==0:
+#             oddSum+=list[i]
+#         else:
+#             evenSum+=list[i]
+#     return oddSum, evenSum
+
+# coollist=(1,2,1,2,1)
+# print(oddEvenSum(coollist))
+
+# 4. Write a function called addUntilLength with two arguments (list and len) that repeatedly appends the last index of list until the length of the list is equal to len. If length of the list is already greater than len, do nothing.
+
+# def addUntilLength(list, length):
+#     if len(list)<length:
+#         value = list[len(list)-1]
+#         for i in range (len(list),length):
+#             list.append(value)
+    
+# list1=[1,2,3,4]
+# addUntilLength(list1,10)
+# print(list1)
+
+# 5. Write a function called swap with three arguments (list, i1 and i2) that swaps the values at i1 and i2.
+
+# def swap(list, i1, i2):
+#     placeholder=list[i1]
+#     list[i1]=list[i2]
+#     list[i2]=placeholder
+
+# list2=[1,2,3,4,5,6,7]
+# i1=5
+# i2=3
+# swap(list2, i1, i2)
+# print(list2)
+
+
+# 6. Write a function called longestItem with one argument that finds the longest string in the list and returns it.
+
+# def longestItem(list):
+#     item=""
+#     for i in range(0,len(list)):
+#         if len(list[i])>len(item):
+#             item=list[i]
+#     return item
+
+# list=["this","this is", "this is the longest", "small"]
+# longestItem(list)
+# print(longestItem(list))
+
+# 7. Write a function called joinLists with two arguments (list1 and list2) that creates and returns a new list by adding indices (adding index 0 of list1 with index 0 of list2, index 1 of list1 with index 1 of list2, etc)
+
+
+# def joinLists(list1, list2):
+#     if len(list1)>len(list2):
+#         listdifference=(len(list1)-len(list2))
+#         for i in range(0,listdifference):
+#              list2.append(0)
+#     elif len(list2)>len(list1):
+#         listdifference=(len(list2)-len(list1))
+#         for i in range(0,listdifference):
+#              list1.append(0)
+#     newList=[]
+#     for i in range (0,len(list1)):
+#         newList.append(list1[i]+list2[i])
+#     return newList
+
+# list1=[0,1,2,3,4]
+# list2=[0,1,2,3,7,8]
+# joinLists(list1, list2)
+# print(joinLists(list1, list2))
+
+# 8. Write a function called tuplicate with two arguments (tuple, num) that takes the first num amount of indices from the initial tuple and adds them to a new tuple twice.
+
+# def tuplicate(tuple, num):
+#     newTuple=tuple[:num]*2
+#     return newTuple
+
+# tuple=(1,2,3,4)
+# num=2
+# tuplicate=tuplicate(tuple, num)
+# print(tuplicate)
+
+
+
+# # 9. Write a function called isCaps with one argument that returns True if all strings in the list have at least one capital letter, False if not.
+
+def isCaps(list):
+    boolean=False
+    check=0
+    for i in range (0,len(list)):
+        for char in list[i]:
+            if char.isupper():
+                check+=1
+    if check>=len(list):     
+        boolean=True       
+    return boolean
+            
+list=["Hello", "YAY", "What"]
+isCaps=isCaps(list)
+print(isCaps)
+
+# def isCaps(list):
+#     count=0
+#     supercount=0
+#     for i in range (0,len(list)):
+#         for char in list[i]:
+#             if char.isupper():
+#                 boolean=True
+#             else:
+#                 boolean=False
+#         if boolean==True:
+#             supercount+=1
+
+#         return True
+            
+list=["Hello", "yayy", "What"]
+isCaps=isCaps(list)
+print(isCaps)
+
+# 1. Write a function called oddList that accepts one argument (list) and returns a new list of only its odd indices. (Hint: it may be easier to create a new list rather than deleting from the original)
+
+# def oddList(list):
+#     newList=[]
+#     for i in range (0, len(list)):
+#         if list[i]%2!=0:
+#             newList.append(list[i])
+#     return newList
+
+# list=[0,1,2,3,4,5]
+# print(oddList(list))
+
+
+# # 2. Write a function called reverse that accepts one argument (list) and reverses it. (hint: this will work similarly to the swap function, but instead for multiple indices)
+
+# def reverse(list):
+#     print (list[::-1])
+
+# list=[1,2,3]
+# reverse(list)
+
+# # 3. Write a function called countType that accepts two arguments (list, var) and returns a count of how many items in the list have the same type as the given var. (i.e. if var is "hello world" then the function should return the count of strings in the list)
+
+# def countType(list, var):
+#     count=0
+#     for i in range (0, len(list)):
+#         if type(var)==type(list[i]):
+#             count+=1
+#     return count
+
+# list=[1,2,3,"hellohello"]
+# var="hi"
+# print(countType(list, var))
+
+# # 4. Write a function called greaterSum that accepts two arguments (list1, list2) and returns True if the sum of list1 is greater than list2, False otherwise. (hint: you can use the fullSum function from Practice 7.27 )
+
+# def greaterSum(list1, list2):
+#     sum1=0
+#     sum2=0
+#     for i in range(0,len(list1)):
+#         sum1+=1
+#     for i in range(0,len(list2)):
+#         sum2+=1
+#     if sum1>=sum2:
+#         return True
+#     else:
+#         return False
+    
+# list1=[3,5,6,7,8]
+# list2=[1,2,3,4,1111]
+# print(greaterSum(list1, list2))
+
+
+# # 5. Write a function called commonElements that accepts two arguments (list1, list2) and returns a new list of all the items that can be found in both lists.
+
+# def commonElements(list1, list2):
+#     newList=[]
+#     for i in range(0,len(list1)):
+#         if list1[i] in list2:
+#             newList.append(list1[i])
+#     return newList
+
+# list1=[3,4,5,6]
+# list2=[1,2,3,4]
+# print(commonElements(list1, list2))
+
+# # 6. Write a function called appendTuple that accepts two arguments (list, tuple) and adds all items from the tuple in correct order to the end of the list.
+# # i.e. [2, 53, 12, 293] (11, 22, 33) should result in [2, 53, 12, 293, 11, 22, 33]
+
+# def appendTuple(list, tuple):
+#     list.extend(tuple)
+#     print(list)
+
+# list=[1,2,3]
+# tuple=(9,10,11)
+# appendTuple(list, tuple)
+
+# # 7. Write a function called insertTuple that accepts three arguments (list, tuple, index) and inserts all items from the tuple in correct order to the given index of the list.
+# # i.e. [2, 53, 12, 293] (11, 22, 33) at index 2 should result in [2, 53, 11, 22, 33, 12, 293]
+
+# def insertTuple(list, tuple, index):
+#     list.insert(index,tuple)
+#     print(list)
+#     # this function should not have a return statement
+
+# list=[0,1,2]
+# tuple=(100, 101)
+# index=1
+# insertTuple(list, tuple, index)
+
+
