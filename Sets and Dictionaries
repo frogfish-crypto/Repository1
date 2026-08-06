@@ -1,0 +1,122 @@
+
+
+
+
+
+
+
+
+# 1. Write a function called firstLetter that accepts two arguments (set, letter) and returns how many items in the set have that letter as the first letter (ignore case)
+
+def firstLetter(set, letter):
+    letterCount=0
+    for x in set:
+        if x[0]==letter:
+            letterCount+=1
+    return letterCount
+
+letter="A"
+set={"Apple", "Banana", "Apricot"}
+lettercount=firstLetter(set, letter)
+print(lettercount)
+
+# 2. Write a function called valueCheck that accepts two arguments (dict, val) and returns a list of all keys with the associated value.
+
+def valueCheck(my_dict, val):
+    keyList=[]
+    for x in my_dict:
+        if my_dict[x] == val:
+            keyList.append(x)
+    return keyList
+
+
+my_dict={
+    "Georgia":400,
+    "California":1200,
+    "New York":400
+}
+val=400
+keyList=valueCheck(my_dict, val)
+print(keyList)
+
+# 3. Write a function called addTuple that accepts two arguments (tuple, dict) and adds tuple into dict as a key-value pair.
+
+def addTuple(tuple, dict1):
+    tuple
+    dict1[tuple[0]] = tuple[1]
+    print (dict1)
+          
+dict1={
+    "score1":70,
+    "score2":80,
+    "score3":40
+}
+tuple=("score4",90)
+addTuple(tuple, dict1)
+
+
+# 4. Write a function called reverseDict that accepts one argument (dict) and returns a new dictionary with reversed key-value pairs.
+
+# def reverseDict(dict1):
+#     reversedIt={}
+#     for x in dict1.items():
+#         savedKey=x
+#         savedValue=dict[x]
+#         x=savedValue
+#         dict[x]=savedKey
+#         reversedIt[x]=[dict[x]]
+#     return reversedIt
+
+# dict1={
+#     "score1":70,
+#     "score2":80,
+#     "score3":40
+# }
+# reversedIt=reverseDict(dict1)
+# print(reversedIt)
+
+# 5. Write a function called removeCommon that accepts two arguments (set, dict) and removes all keys from the dictionary that are found in set, then adds those removed keys to a new dictionary and returns it.
+
+def removeCommon(set, dict1):
+    removed={}
+    for x in dict1.keys():
+        if x in set:
+            dict1.pop(x)
+        removed[x]=[dict1(x)]
+    return removed
+
+dict1={
+    "score1":70,
+    "score2":80,
+    "score3":40
+}
+set={"score1","superman",30}
+removed=removeCommon(set, dict1)
+print(removed)
+
+# 6. Write a function called itemList that accepts one argument (dict) and returns a list of tuples of all its key - value pairs. Do NOT use the built-in .items() function.
+
+# def itemList(dict):
+    
+#     return itemList
+
+# 7. Write a function called addDict that accepts two arguments (dict1, dict2) and joins the two together into a new dictionary. If there is a repeated key, add their values together.
+# ex:
+# dict1: {"one": 1, "two": 3}
+# dict2: {"one": 3}
+# the function should return {"one": 4, "two": 3}
+
+# def addDict(dict1, dict2)
+#     # code here
+#     return addDict
+
+# 8. Write a function called setCount that accepts three arguments (set1, set2, set3) and returns a dictionary with how often words appear in the sets.
+# ex:
+# set1 = {"apple", "banana", "cucumber", "durian"}
+# set2 = {"durian", "eggplant", "cucumber"}
+# set3 = {"fish", "beef", "pork"}
+# dict should contain "apple": 1, "banana": 1, "cucumber": 2, etc..
+
+# def setCount(set1, set2, set3):
+#     # code here
+#     return dict

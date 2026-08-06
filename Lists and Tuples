@@ -203,19 +203,22 @@
 # # 9. Write a function called isCaps with one argument that returns True if all strings in the list have at least one capital letter, False if not.
 
 def isCaps(list):
-    boolean=False
-    check=0
     for i in range (0,len(list)):
+        boolean=False
         for char in list[i]:
-            if char.isupper():
-                check+=1
-    if check>=len(list):     
-        boolean=True       
-    return boolean
-            
-list=["Hello", "YAY", "What"]
+            if boolean==False and char.isupper():
+                boolean=True
+        if not boolean:
+            return False
+    return True
+
+
+list=["Hello", "yay", "What"]
 isCaps=isCaps(list)
 print(isCaps)
+
+#feedback: looping through each character in the string, is good but you might be overriding it with follwing ones
+#"break" keyword lets you break out of a loop and just leave it
 
 # def isCaps(list):
 #     count=0
@@ -231,9 +234,9 @@ print(isCaps)
 
 #         return True
             
-list=["Hello", "yayy", "What"]
-isCaps=isCaps(list)
-print(isCaps)
+# list=["Hello", "yayy", "What"]
+# isCaps=isCaps(list)
+# print(isCaps)
 
 # 1. Write a function called oddList that accepts one argument (list) and returns a new list of only its odd indices. (Hint: it may be easier to create a new list rather than deleting from the original)
 
@@ -325,4 +328,29 @@ print(isCaps)
 # index=1
 # insertTuple(list, tuple, index)
 
+
+#create a set called colors 
+
+colors={"red", "orange", "yellow", "green"}
+colors2={"purple","blue", "red", "pink", "green"}
+
+colors2.add("yellow")
+
+colors3=colors.intersection(colors2)
+print(colors3)
+
+
+grades={
+    "Avery":94,
+    "Bob":47,
+    "Mike":100,
+    "Jen":79
+}
+
+grades["Bob"]=68
+grades["Emma"]=85
+Jen=grades.pop("Jen")
+
+print(grades)
+print(Jen)
 
