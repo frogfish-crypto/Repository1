@@ -8,63 +8,61 @@
 
 # 1. Write a function called firstLetter that accepts two arguments (set, letter) and returns how many items in the set have that letter as the first letter (ignore case)
 
-def firstLetter(set, letter):
-    letterCount=0
-    for x in set:
-        if x[0]==letter:
-            letterCount+=1
-    return letterCount
+# def firstLetter(set, letter):
+#     letterCount=0
+#     for x in set:
+#         if x[0]==letter:
+#             letterCount+=1
+#     return letterCount
 
-letter="A"
-set={"Apple", "Banana", "Apricot"}
-lettercount=firstLetter(set, letter)
-print(lettercount)
+# letter="A"
+# set={"Apple", "Banana", "Apricot"}
+# lettercount=firstLetter(set, letter)
+# print(lettercount)
 
 # 2. Write a function called valueCheck that accepts two arguments (dict, val) and returns a list of all keys with the associated value.
 
-def valueCheck(my_dict, val):
-    keyList=[]
-    for x in my_dict:
-        if my_dict[x] == val:
-            keyList.append(x)
-    return keyList
+# def valueCheck(my_dict, val):
+#     keyList=[]
+#     for x in my_dict:
+#         if my_dict[x] == val:
+#             keyList.append(x)
+#     return keyList
 
 
-my_dict={
-    "Georgia":400,
-    "California":1200,
-    "New York":400
-}
-val=400
-keyList=valueCheck(my_dict, val)
-print(keyList)
+# my_dict={
+#     "Georgia":400,
+#     "California":1200,
+#     "New York":400
+# }
+# val=400
+# keyList=valueCheck(my_dict, val)
+# print(keyList)
 
 # 3. Write a function called addTuple that accepts two arguments (tuple, dict) and adds tuple into dict as a key-value pair.
 
-def addTuple(tuple, dict1):
-    tuple
-    dict1[tuple[0]] = tuple[1]
-    print (dict1)
+# def addTuple(tuple, dict1):
+#     tuple
+#     dict1[tuple[0]] = tuple[1]
+#     print (dict1)
           
-dict1={
-    "score1":70,
-    "score2":80,
-    "score3":40
-}
-tuple=("score4",90)
-addTuple(tuple, dict1)
+# dict1={
+#     "score1":70,
+#     "score2":80,
+#     "score3":40
+# }
+# tuple=("score4",90)
+# addTuple(tuple, dict1)
 
 
 # 4. Write a function called reverseDict that accepts one argument (dict) and returns a new dictionary with reversed key-value pairs.
 
 # def reverseDict(dict1):
 #     reversedIt={}
-#     for x in dict1.items():
-#         savedKey=x
-#         savedValue=dict[x]
-#         x=savedValue
-#         dict[x]=savedKey
-#         reversedIt[x]=[dict[x]]
+#     keysList=list(dict1.keys())
+#     valuesList=list(dict1.values())
+#     for x in range(0, len(dict1)):
+#         reversedIt[valuesList[x]]=keysList[x]
 #     return reversedIt
 
 # dict1={
@@ -79,10 +77,10 @@ addTuple(tuple, dict1)
 
 def removeCommon(set, dict1):
     removed={}
-    for x in dict1.keys():
+    for x in list(dict1.keys()):
         if x in set:
+            removed[x]=[dict1[x]]
             dict1.pop(x)
-        removed[x]=[dict1(x)]
     return removed
 
 dict1={
@@ -94,11 +92,22 @@ set={"score1","superman",30}
 removed=removeCommon(set, dict1)
 print(removed)
 
-# 6. Write a function called itemList that accepts one argument (dict) and returns a list of tuples of all its key - value pairs. Do NOT use the built-in .items() function.
+#6. Write a function called itemList that accepts one argument (dict) and returns a list of tuples of all its key - value pairs. Do NOT use the built-in .items() function.
 
-# def itemList(dict):
-    
-#     return itemList
+def itemList(dict):
+    itemList=[]
+    for x in dict:
+        tuple=(x,dict[x])
+        itemList.append(tuple)
+    return itemList
+
+dict={
+    "score1":70,
+    "score2":80,
+    "score3":40
+}
+print(itemList(dict))
+
 
 # 7. Write a function called addDict that accepts two arguments (dict1, dict2) and joins the two together into a new dictionary. If there is a repeated key, add their values together.
 # ex:
@@ -106,9 +115,26 @@ print(removed)
 # dict2: {"one": 3}
 # the function should return {"one": 4, "two": 3}
 
-# def addDict(dict1, dict2)
-#     # code here
-#     return addDict
+def addDict(dict1, dict2):
+    addDict={}
+    for x in dict1:
+        addDict[x]=dict1[x]
+    for x in dict2:
+        addDict[x]=dict2[x]
+        if x in dict1:
+            addDict[x]=dict2[x]+dict1[x]
+    return addDict
+
+dict1= {
+     "one": 1, 
+     "two": 3
+     }
+
+dict2= {
+    "two": 10
+    }
+
+print(addDict(dict1, dict2))
 
 # 8. Write a function called setCount that accepts three arguments (set1, set2, set3) and returns a dictionary with how often words appear in the sets.
 # ex:
@@ -118,5 +144,106 @@ print(removed)
 # dict should contain "apple": 1, "banana": 1, "cucumber": 2, etc..
 
 # def setCount(set1, set2, set3):
-#     # code here
+#     dict={}
+#     for x in set1:
+#         dict[x]=1
+#     for x in set2:
+#         dict[x]=1
+#     for x in set2:
+#         if x in set1:
+#            dict[x]=dict[x]+1 
+#     for x in set3:
+#         dict[x]=1
+#         if x in set1 or set2:
+#             dict[x]=dict[x]+1
 #     return dict
+
+def setCount(set1, set2, set3):
+    dict={}
+    allItems=list(set1)+list(set2)+list(set3)
+    for x in allItems:
+        dict[x] = allItems.count(x) 
+    return dict
+
+
+set1 = {"apple", "banana", "cucumber", "durian"}
+set2 = {"durian", "eggplant", "cucumber"}
+set3 = {"fish", "eggplant", "pork"}
+
+setCount=setCount(set1, set2, set3)
+print(setCount)
+
+
+# class myClas:
+#     def __init__(self, name, value):
+#         self.__name=name
+#         #outside of function you can't access the name anymore
+#         self.value=value
+
+#     def printName(self):
+#         print("My name is "+self.name)
+
+#     def getName(self):
+#         return  self.__name
+
+#     def setName(self, newName):
+#         self.__name=newName
+
+# # obj= myClass(234,"Hello")
+# # obj.value=383
+# # print(obj.value)
+
+# # print(printName)
+
+# # obj.setName("Goodbye")
+
+# # print(obj.setName)
+
+# # can import classas:
+# #  import myclass
+# # classes that are built in : lists, dict, set, str, etc
+
+
+# class Pet:
+#     def __init__(self, name, species, address):
+#         self.__name=name
+#         self.__species=species
+#         self.__address=address
+
+#         def setName(self, newName):
+#             self.__name=newName
+        
+#         def getName(self):
+#             return self.__name
+        
+#         def getAddress(self):
+#             return self.__address
+#         #address is a dictionary ideally so it's a little cooked
+
+#         def changeAddressNumber(self, newNumber):
+#             self.address["number"]=newNumber
+
+#         def changeAddress(self, key, newValue):
+#             self.__address[key]=newValue
+
+#         def getSpecies(self):
+#             return self.__species
+        
+#         def addBirthday(self, month, day, year):
+#             birthday={
+#                 "month":month,
+#                 "day":day,
+#                 "year":year
+#             }
+#             self.__birthday=birthday
+
+#         {
+#             "number":2259,
+#             "street":"Bay St",
+#             "City":"San Jose",
+#             "Country":"USA"
+#         }
+
+
+# goldie=Pet("Goldie", "goldfish", "address")
+

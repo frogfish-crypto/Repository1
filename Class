@@ -1,0 +1,125 @@
+# Create a class called Student with the following attributes:
+# - First name (string)
+# - Last name (string)
+# - Birthday (dictionary with keys for month, day, year)
+# - Current year in school (int)
+# - Transcript (dictionary with each class name taken as a key and the numerical grade as a value)
+# - GPA (float)
+
+# And include the following functions:
+# - init
+# - get/set for name, birthday, year in school
+# - addCourse (add one course to the transcript dictionary) (adding a course should also recalculate GPA accordingly, in which case you can call self.calculateGPA() within this function)
+# - calculateAge
+# - calculateGPA (treat all classes in transcript as equal weight)
+# - advanceYear (increments year by one)
+# - canGraduate (returns True if has taken more than 20 classes and GPA is greater than or equal to 2.0)
+
+# For certain functions, it might be important to check if certain variables exist (i.e. check if birthday was added for calculateAge, checking if transcript has classes for calculateGPA)
+
+# For calculateGPA, you can refer to https://gpacalculator.io/gpa-scale/
+
+
+
+class Student:
+    def __init__(self, firstName, lastName, currentYear):
+        self.firstName = firstName
+        self.lastName = lastName
+        self.currentYear = currentYear
+
+        # code here
+        # init should only accept first + last name and year, but you can create empty variables / dictionaries for the rest.
+        # i.e. self.__GPA = None
+
+    def getName(self):
+        return self.firstName + self.lastName
+
+    def setName(self, newFirst, newLast):
+        self.firstName = newFirst
+        self.lastName = newLast
+
+    def setBirthday(self, month, day, year):
+        birthday = {
+            "month":month,
+            "day":day,
+            "year":year
+            }
+        self.birthday=birthday
+    
+    def getBirthday(self):
+        return self.birthday
+
+    def getYear(self):
+        return self.currentYear
+
+    def setYear(self, newYear):
+         self.Year = newYear
+
+    transcript={}
+
+    def addCourse(self, course, grade):
+        self.transcript[course]=grade
+        return self.transcript
+
+    def calculateAge(self, nowMonth, nowDay, nowYear):
+        self.ageMonth = nowMonth-self.birthday["month"]
+        self.ageDays = nowDay-self.birthday["day"]
+        self.ageYears = nowYear-self.birthday["year"]
+        return self.ageMonths + "/" + self.ageDays + "/" + self.ageYears
+
+    def calculateGPA(self):
+        GPA=0
+        GPA=sum(transcript.values())/len(transcript)
+        if GPA>=93:
+            self.weighted=4.0
+        elif GPA>=90 and GPA<=92:
+            self.weighted=3.7
+        elif GPA>=87 and GPA<=89:
+            self.weighted=3.3
+        elif GPA>=83 and GPA<=86:
+            self.weighted=3.0
+        elif GPA>=80 and GPA<=82:
+            self.weighted=2.7
+        elif GPA>=77 and GPA<=79:
+            self.weighted=2.3
+        elif GPA>=73 and GPA<=76:
+            self.weighted=2.0
+        elif GPA>=70 and GPA<=72:
+            self.weighted=1.7
+        elif GPA>=67 and GPA<=69:
+            self.weighted=1.3
+        elif GPA>=65 and GPA<=66:
+            self.weighted=1.0
+        else:
+            self.weighted=0.0
+        return self.weighted
+
+    def getGPA(self):
+        return self.weighted
+
+    def advanceYear(self):
+        self.currentYear = self.currentYear+1
+        return self.currentYear
+
+    def canGraduate(self):
+        if len(transcript)>=20 and self.weight>=2.0:
+            return True
+
+Student1 = Student("Wednesday ", "Addams", 2026)
+
+
+name = Student1.getName()
+print(name)
+
+transcript = Student1.addCourse("Social Studies", 90)
+print(transcript)
+
+
+transcript = Student1.addCourse("Science", 100)
+print(transcript)
+
+Student1.calculateGPA()
+GPA=Student1.getGPA()
+print(GPA)
+
+print(Student1.advanceYear())
