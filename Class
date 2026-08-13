@@ -102,8 +102,10 @@ class Student:
         return self.currentYear
 
     def canGraduate(self):
-        if len(transcript)>=20 and self.weight>=2.0:
+        if len(transcript)>=20 and self.weighted>=2.0:
             return True
+        else:
+            return False
 
 Student1 = Student("Wednesday ", "Addams", 2026)
 
@@ -123,3 +125,170 @@ GPA=Student1.getGPA()
 print(GPA)
 
 print(Student1.advanceYear())
+
+bool=Student1.canGraduate()
+print(bool)
+
+# class University_Student:
+#     def __init__(self, firstName, lastName, currentYear, major, minor):
+#         super().__init__(self, firstName, lastName, currentYear)    
+#         self.__major = major
+#         self.__minor = minor
+
+# Create two child classes from Student
+
+# the University_Student class should have the following additional attributes:
+# - a major (str)
+# - a minor (str) (if applicable, if none can be set to None)
+# - major status (bool)
+# - minor status (bool)
+# - student organizations / involvements (list)
+
+# And include the following additional functions:
+# - init
+# - get/changeMajor (only goes through if year is less than 3)
+# - get/changeMinor
+# - get/addInvolvement
+# - majorComplete (set major status to True)
+# - minorComplete (set minor status to True)
+# - canGraduate (returns True if canGraduate from parent class returns True and majorStatus is True)
+
+# the HS_Student class should have the following additional attributes:
+# - seat number (int)
+# - homeroom teacher (str)
+# - AP scores (dictionary with AP tests as keys)
+# - SAT scores (list with all SAT scores)
+
+# And include the following additional functions:
+# - init
+# - get/addAP
+# - get/addSAT
+# - changeClass (takes input for new homeroom teacher and seat number)
+# - advanceYear (takes input for new homeroom teacher and new seat number)
+# - highestSAT (returns highest recorded SAT score)
+# - canGraduate (returns True if year is 4, has taken more than 15 classes, and has at least 3 AP scores of 5)
+
+class University_Student(Student):
+    def __init__(self, firstName, lastName, currentYear, major, minor):
+        super().__init__(firstName, lastName, currentYear)    
+        self.__major = major
+        self.__minor = minor
+
+
+    def getMajor(self):
+        return self.__major
+
+    def changeMajor(self, newMajor):
+        if self.currentYear>=3:
+            self.__major=newMajor
+
+    def getMinor(self):
+        return self.__minor
+
+    def changeMinor(self, newMinor):
+        self.__minor=newMinor
+    
+    def getInvolvements(self):
+        return self.__invol
+
+    def addInvolvement(self, invol):
+        self.__invol=[]
+        self.__invol.append(invol)
+
+    def majorComplete(self):
+        self.__major=True
+        return self.__major
+
+    def minorComplete(self):
+        self.__minor=True
+        return self.__minor
+
+    def canGraduate(self):
+        if self.__major== True and self.__minor==True:
+            self.canGraduate=True
+            return self.canGraduate
+
+
+Student1=University_Student("Wednesday", "Addams", 2, "Forensics", "None")
+
+print("Major:", Student1.getMajor())
+
+print("Minor:", Student1.getMinor())
+
+Student1.addInvolvement("Theater")
+Student1.addInvolvement("Spider Society")
+print("Involvements:", Student1.getInvolvements())
+
+Student1.changeMajor("Psychology")
+print("Major:", Student1.getMajor())
+
+Student1.majorComplete()
+Student1.minorComplete()
+print("Graduation:", Student1.canGraduate())
+
+
+
+
+
+class HS_Student(Student):
+    def __init__(self, firstName, lastName, currentYear, seatNum, homeroom):
+        super().__init__(firstName, lastName, currentYear)    
+        self.__seatNum=seatNum
+        self.__homeroom=homeroom
+
+    def getAP(self):
+        return self.listAP
+
+    def addAP(self, newAP, score):
+        self.listAP={}
+        self.listAP[newAP]=score
+
+    def getSAT(self):
+        return self.getSAT
+    
+    def addSAT(self, newSAT):
+        self.newSAT=[]
+        self.newSAT.append(newSAT)
+
+    def highestSAT(self):
+        for i in range(0,len(self.newSAT)):
+            highest=self.newSAT[0]
+            if self.newSAT[i]>highest:
+                highest=self.newSAT[i]
+            return highest
+
+    def getHomeroom(self):
+        return self.getHomeroom
+
+    def getSeat(self):
+       return self.getSeat
+
+    def changeClass(self, newSeatNum, newHomeroom):
+        self.__seatNum=newSeatNum
+        self.__homeroom=newHomeroom
+        return self.__seatNum, self.__homeroom
+
+    def advanceYear(self, seatNum, homeroom):
+        self.currentYear=0
+        self.__seatNum=seatNum
+        self.__homeroom=homeroom
+        self.currentYear=self.currentYear+1
+        return self.__seatNum, self.__homeroom, self.currentYear
+
+    def canGraduate(self):
+        if self.currentYear==4 and len(self.listAP)>=15:
+            return True
+
+# returns True if year is 4, has taken more than 15 classes, and has at least 3 AP scores of 5
+        
+
+Student1=HS_Student("Wednesday", "Addams", 3, 36, "Mr.Smith")
+
+Student1.addSAT(1310)
+Student1.addSAT(1410)
+Student1.addSAT(1500)
+
+print(Student1.highestSAT())
+
+Student1.addAP("Chemistry",3)
+print(Student1.getAP())
