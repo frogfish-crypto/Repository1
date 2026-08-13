@@ -235,49 +235,51 @@ class HS_Student(Student):
         super().__init__(firstName, lastName, currentYear)    
         self.__seatNum=seatNum
         self.__homeroom=homeroom
+        self.__AP = {}
+        self.__SAT=[]
 
     def getAP(self):
-        return self.listAP
+        return self.__AP
 
     def addAP(self, newAP, score):
-        self.listAP={}
-        self.listAP[newAP]=score
+        self.__AP[newAP] = score
 
     def getSAT(self):
-        return self.getSAT
+        return self.__SAT
     
     def addSAT(self, newSAT):
-        self.newSAT=[]
-        self.newSAT.append(newSAT)
+        self.__SAT.append(newSAT)
 
     def highestSAT(self):
-        for i in range(0,len(self.newSAT)):
-            highest=self.newSAT[0]
-            if self.newSAT[i]>highest:
-                highest=self.newSAT[i]
-            return highest
+        return max(self.__SAT)
 
     def getHomeroom(self):
-        return self.getHomeroom
+        return self.__homeroom
 
     def getSeat(self):
-       return self.getSeat
+       return self.__seatNum
 
     def changeClass(self, newSeatNum, newHomeroom):
         self.__seatNum=newSeatNum
         self.__homeroom=newHomeroom
-        return self.__seatNum, self.__homeroom
 
     def advanceYear(self, seatNum, homeroom):
-        self.currentYear=0
         self.__seatNum=seatNum
         self.__homeroom=homeroom
         self.currentYear=self.currentYear+1
         return self.__seatNum, self.__homeroom, self.currentYear
 
     def canGraduate(self):
-        if self.currentYear==4 and len(self.listAP)>=15:
+        count = 0
+        for score in self.__AP.values():
+            if score==5:
+                count+=1
+        if count>=3:
+            count=True
+        if self.currentYear==4 and len(self.__AP)>=15 and count==True:
             return True
+        else:
+            return False
 
 # returns True if year is 4, has taken more than 15 classes, and has at least 3 AP scores of 5
         
@@ -291,4 +293,16 @@ Student1.addSAT(1500)
 print(Student1.highestSAT())
 
 Student1.addAP("Chemistry",3)
+Student1.addAP("Math",5)
+Student1.addAP("English",5)
+Student1.addAP("Art",5)
 print(Student1.getAP())
+
+
+
+print("Can Graduate:",Student1.canGraduate())
+
+Student1.changeClass(34, "Ms. Spike")
+
+print("Seat Number:",Student1.getSeat())
+print("Homeroom Teacher:", Student1.getHomeroom())
